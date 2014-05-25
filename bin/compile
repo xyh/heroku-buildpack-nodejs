@@ -141,7 +141,7 @@ echo "Dependencies installed" | indent
 
 # Run grunt job
 echo "-----> Run grunt build job"
-$BUILD_DIR/node_modules/.bin/grunt build
+$build_dir/node_modules/.bin/grunt build
 echo "Production built" | indent
 
 # Update the PATH
