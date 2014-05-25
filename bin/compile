@@ -134,10 +134,8 @@ if [ ! -e $build_dir/Procfile ]; then
   fi
 fi
 
-# Install bower libraries
-echo "-----> Run local npm to install bower"
-$build_dir/node_modules/.bin/npm install bower
-# install front-end dependencies with bower
+# Run bower
+echo "-----> Run bower install"
 $build_dir/node_modules/.bin/bower install
 echo "Dependencies installed" | indent
 
