@@ -134,6 +134,18 @@ if [ ! -e $build_dir/Procfile ]; then
   fi
 fi
 
+# Install bower libraries
+echo "-----> Run local npm to install bower"
+$build_dir/node_modules/.bin/npm install bower
+# install front-end dependencies with bower
+$build_dir/node_modules/.bin/bower install
+echo "Dependencies installed" | indent
+
+# Run grunt job
+echo "-----> Run grunt build job"
+$BUILD_DIR/node_modules/.bin/grunt build
+echo "Production built" | indent
+
 # Update the PATH
 status "Building runtime environment"
 mkdir -p $build_dir/.profile.d
